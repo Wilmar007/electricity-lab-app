@@ -1,1 +1,1 @@
-# electricity-lab-app
+# physics-circuit-simulation

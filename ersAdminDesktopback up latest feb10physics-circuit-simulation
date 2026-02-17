@@ -1,0 +1,29 @@
+[33m856e513[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Clean server-only lock engine
+[33m1b4c96f[m Latest lock fixes
+[33m2b0c77e[m Expose fetchLocksFromServer globally and force load
+[33m8e055e4[m Force server lock fetch on page load
+[33me7cca53[m Restore fetchLocksFromServer function
+[33m6841fdc[m Disable electricityLabLocks localStorage system
+[33m9c4a9c7[m Remove old localStorage lock engine completely
+[33m4d0a5ef[m Disable old localStorage lock engine
+[33m1b48eaa[m Remove localStorage lock engine override
+[33m3dfe985[m Switch to correct Apps Script deployment
+[33m56f1fc0[m Fix lock boolean conversion for server sync
+[33mfa15bed[m Fix: apply server locks on-fetch so teacher overrides take effect immediately
+[33m0a3dee2[m Fix: canonicalize Power to power_energy for teacher overrides and UI gating
+[33m090150c[m Fix: enforce power_energy canonical lock and apply server override
+[33m1c85e0a[m Fix: ensure server teacher overrides apply immediately (power_energy); add final lock enforcer
+[33m30c51ce[m Fix power_energy canonical lock handling
+[33mba069ac[m Fix parallel quiz unlock message
+[33m2287042[m Fix: Ensure quiz unlocks work reliably on GitHub Pages (early listener, topic normalization, replay-safe unlock)
+[33m3fe13cf[m Delete style.css
+[33mc410f4e[m Delete index.html
+[33m12346e1[m Delete script.js
+[33m0120790[m Update index.html
+[33m2d7c43a[m Update script.js
+[33m5ae7d85[m Update style.css
+[33m7c0e52e[m Update index.html
+[33mbc80109[m Create script.js
+[33m9aa8fcb[m Create style.css
+[33mf5467f4[m Create index.html
+[33mf81d0b9[m Initial commit
