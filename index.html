@@ -8,6 +8,8 @@ ALL SIMULATORS ARE IN /simulators FOLDER ONLY.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Electricity Lab</title>
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#F59E0B">
   <script src="/_sdk/element_sdk.js"></script>
   <style>
     body {
@@ -4367,6 +4369,13 @@ window.addEventListener('load', () => {
   }, true);
 })();
 </script>
+       <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
  </body>
 </html>
+
 
