@@ -4,21 +4,30 @@ const urlsToCache = [
   "./",
   "./index.html",
   "./circuit-builder.html",
+  "./series-circuit.html",
+  "./parallel-circuit.html",
+  "./power-energy-simulator.html",
+  "./electric-charge.html",
+  "./ohms-simulator.html",
+  "./script.js",
+  "./style.css",
   "./manifest.json"
 ];
 
-// Install
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+      .then(cache => {
+        return cache.addAll(urlsToCache);
+      })
   );
 });
 
-// Fetch (serve cached files when offline)
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request)
-      .then(response => response || fetch(event.request))
+      .then(response => {
+        return response || fetch(event.request);
+      })
   );
 });
