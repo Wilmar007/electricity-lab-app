@@ -3868,6 +3868,49 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Result post error', e);
     }
   });
+ // ===== OFFLINE QUIZ STORAGE SYSTEM =====
+
+// Save quiz result locally if offline
+function saveQuizOffline(payload) {
+  let offline = JSON.parse(localStorage.getItem("offlineQuizResults")) || [];
+  offline.push(payload);
+  localStorage.setItem("offlineQuizResults", JSON.stringify(offline));
+  console.log("Saved quiz offline");
+}
+
+// Sync saved quizzes when internet returns
+function syncOfflineQuizzes() {
+  const config = window.QUIZ_RESULTS_CONFIG;
+  if (!config.enabled || !config.endpoint) return;
+
+  let offline = JSON.parse(localStorage.getItem("offlineQuizResults")) || [];
+  if (offline.length === 0) return;
+
+  offline.forEach(payload => {
+    try {
+
+  if (navigator.onLine) {
+
+    fetch(config.endpoint, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: payload
+    });
+
+  } else {
+
+    saveQuizOffline(payload);
+
+  }
+
+} catch (e) {
+
+  // If fetch fails (network unstable), also save offline
+  saveQuizOffline(payload);
+  console.error('Result post error', e);
+
+}
 </script>
 <script>
 function lockTopic(topic){
@@ -4377,5 +4420,6 @@ if ('serviceWorker' in navigator) {
 </script>
  </body>
 </html>
+
 
 
