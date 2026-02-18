@@ -2349,6 +2349,20 @@
         this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
         this.canvas.addEventListener('mouseleave', () => this.handleMouseUp());
 
+        // Touch support: call existing handlers (do not change handler logic)
+        this.canvas.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          this.handleMouseDown(e);
+        });
+
+        document.addEventListener('touchmove', (e) => {
+          this.handleMouseMove(e);
+        });
+
+        document.addEventListener('touchend', () => {
+          this.handleMouseUp();
+        });
+
         // Controls
         document.getElementById('flipCompassMagnet').addEventListener('click', () => {
           this.magnet.flipped = !this.magnet.flipped;
