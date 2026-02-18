@@ -9,6 +9,10 @@ const urlsToCache = [
   "./power-energy-simulator.html",
   "./electric-charge.html",
   "./ohms-simulator.html",
+
+  "./simulators/magnetism.html",
+  "./simulators/magnetism-part.html",
+
   "./script.js",
   "./style.css",
   "./manifest.json",
