@@ -1007,9 +1007,15 @@
 
       setupEventListeners() {
         this.canvas.addEventListener('mousedown', (e) => this.handleMouseDown(e));
-        this.canvas.addEventListener('touchstart', (e) => this.handleMouseDown(e));
+        this.canvas.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          this.handleMouseDown(e);
+        });
         this.canvas.addEventListener('mousemove', (e) => this.handleMouseMove(e));
-        document.addEventListener('touchmove', (e) => this.handleMouseMove(e));
+        document.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+          this.handleMouseMove(e);
+        }, { passive: false });
         this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
         this.canvas.addEventListener('mouseleave', () => this.handleMouseUp());
         document.addEventListener('touchend', () => this.handleMouseUp());
@@ -2356,8 +2362,9 @@
         });
 
         document.addEventListener('touchmove', (e) => {
+          e.preventDefault();
           this.handleMouseMove(e);
-        });
+        }, { passive: false });
 
         document.addEventListener('touchend', () => {
           this.handleMouseUp();
@@ -2940,9 +2947,15 @@
       setupEventListeners() {
         // Canvas drag events
         this.canvas.addEventListener('mousedown', (e) => this.handleMouseDown(e));
-        this.canvas.addEventListener('touchstart', (e) => this.handleMouseDown(e));
+        this.canvas.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          this.handleMouseDown(e);
+        });
         this.canvas.addEventListener('mousemove', (e) => this.handleMouseMove(e));
-        document.addEventListener('touchmove', (e) => this.handleMouseMove(e));
+        document.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+          this.handleMouseMove(e);
+        }, { passive: false });
         this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
         this.canvas.addEventListener('mouseleave', () => this.handleMouseUp());
         document.addEventListener('touchend', () => this.handleMouseUp());
@@ -3296,9 +3309,15 @@
         
         // Canvas drag for paper clips
         this.canvas.addEventListener('mousedown', (e) => this.handleMouseDown(e));
-        this.canvas.addEventListener('touchstart', (e) => this.handleMouseDown(e));
+        this.canvas.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          this.handleMouseDown(e);
+        });
         this.canvas.addEventListener('mousemove', (e) => this.handleMouseMove(e));
-        document.addEventListener('touchmove', (e) => this.handleMouseMove(e));
+        document.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+          this.handleMouseMove(e);
+        }, { passive: false });
         this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
         this.canvas.addEventListener('mouseleave', () => this.handleMouseUp());
         document.addEventListener('touchend', () => this.handleMouseUp());
