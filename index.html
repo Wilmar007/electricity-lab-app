@@ -872,6 +872,17 @@ button,
   max-width: 100%;
   padding: 0;
 }
+   /* ===============================
+   FORCE DESKTOP BUILDER LAYOUT
+   =============================== */
+
+#builder-tab {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html, body {
+  min-width: 1280px !important;
+}
 
   </style>
   <style>@view-transition { navigation: auto; }</style>
@@ -4420,6 +4431,7 @@ if ('serviceWorker' in navigator) {
 </script>
  </body>
 </html>
+
 
 
 
