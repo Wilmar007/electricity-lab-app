@@ -1,8 +1,10 @@
-const CACHE_NAME = "electricity-lab-v2";
+const CACHE_NAME = "electricity-lab-v3"; // 🔥 bump version
 
 const urlsToCache = [
   "./",
   "./index.html",
+
+  // Simulators
   "./circuit-builder.html",
   "./series-circuit.html",
   "./parallel-circuit-simulator.html",
@@ -10,9 +12,19 @@ const urlsToCache = [
   "./electric-charge.html",
   "./ohms-simulator.html",
 
+  // ✅ QUIZZES (ADD THESE)
+  "./series-quiz.html",
+  "./parallel-quiz.html",
+  "./power-energy-quiz.html",
+  "./electric-charge-quiz.html",
+  "./ohms-quiz.html",
+  "./teacher.html",
+
+  // Magnetism
   "./simulators/magnetism.html",
   "./simulators/magnetism-part.html",
 
+  // Assets
   "./script.js",
   "./style.css",
   "./manifest.json",
